@@ -1,0 +1,46 @@
+/* src/pages/Home.css */
+.home-container {
+  text-align: center;
+  background-color: #f8f9fa; /* Light background */
+  padding: 50px 20px 0px; /* Padding around the container */
+}
+
+.hero {
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.hero-image {
+  width: 100%;
+  max-height: auto; /* Ensure the image does not exceed this height */
+  object-fit: cover; /* Cover the area while preserving aspect ratio */
+  border-radius: 10px; /* Rounded corners */
+  margin-top: -40px;
+}
+
+.slogan {
+  font-size: 2.5rem; /* Slogan font size */
+  margin: 20px 0; /* Margin around slogan */
+  color: #333; /* Dark text color */
+}
+
+.description {
+  font-size: 1.2rem; /* Description font size */
+  color: #555; /* Slightly lighter text color */
+  margin-bottom: 30px; /* Space below description */
+}
+
+.register-button {
+  padding: 8px 10px; /* Padding around button */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-size: 1.1rem; /* Button text size */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.register-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

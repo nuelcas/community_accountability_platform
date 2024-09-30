@@ -1,0 +1,86 @@
+/* src/components/Polls.css */
+.poll-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.poll-title {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.polls-mission {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #34495e;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.poll-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.poll-question {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2980b9;
+  margin-bottom: 15px;
+}
+
+.options-container {
+  margin-bottom: 20px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.option input {
+  margin-right: 10px;
+}
+
+.option label {
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.vote-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.vote-button:hover {
+  background-color: #2980b9;
+}
+
+.vote-button.disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.thank-you {
+  color: #27ae60;
+  font-weight: bold;
+  margin-top: 10px;
+}
