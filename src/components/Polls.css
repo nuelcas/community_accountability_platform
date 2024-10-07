@@ -1,13 +1,14 @@
 /* src/components/Polls.css */
 .poll-container {
   max-width: 800px;
-  margin: 50px auto;
+  margin: 20px auto; /* Reduce top and bottom margin for less white space */
   padding: 20px;
   background-color: #f4f4f4;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Title styling */
 .poll-title {
   text-align: center;
   color: #2c3e50;
@@ -16,22 +17,25 @@
   margin-bottom: 20px;
 }
 
+/* Mission statement styling */
 .polls-mission {
   text-align: center;
   font-size: 1.2rem;
   color: #34495e;
-  margin-bottom: 40px;
+  margin-bottom: 30px; /* Reduced margin for less space */
   font-style: italic;
 }
 
+/* Poll card container styling */
 .poll-card {
   background-color: #ffffff;
   border-radius: 8px;
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* Reduce space between cards */
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* Poll question styling */
 .poll-question {
   font-size: 1.5rem;
   font-weight: bold;
@@ -39,10 +43,12 @@
   margin-bottom: 15px;
 }
 
+/* Option container styling */
 .options-container {
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Reduce bottom margin for less white space */
 }
 
+/* Individual option styling */
 .option {
   display: flex;
   align-items: center;
@@ -58,6 +64,7 @@
   color: #2c3e50;
 }
 
+/* Vote button styling */
 .vote-button {
   background-color: #3498db;
   color: white;
@@ -79,8 +86,50 @@
   cursor: not-allowed;
 }
 
+/* Thank you message styling */
 .thank-you {
   color: #27ae60;
   font-weight: bold;
   margin-top: 10px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .poll-container {
+    padding: 15px;
+    margin: 15px auto; /* Reduce margin for smaller screens */
+  }
+
+  .poll-title {
+    font-size: 1.8rem;
+  }
+
+  .poll-question {
+    font-size: 1.3rem;
+  }
+
+  .vote-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .poll-container {
+    padding: 10px;
+    margin: 10px auto; /* Further reduce margin for small screens */
+  }
+
+  .poll-title {
+    font-size: 1.5rem;
+  }
+
+  .poll-question {
+    font-size: 1.2rem;
+  }
+
+  .vote-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
 }

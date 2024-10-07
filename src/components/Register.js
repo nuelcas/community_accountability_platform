@@ -2,33 +2,49 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // To navigate to the login page
 import axios from "axios";
-import "./Register.css"; // Make sure to create and style this file
+import "./Register.css";
 import Contact from "./Contact";
 
 const Register = () => {
-  const [name, setName] = useState(""); // New state for name
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState(""); // State for success or error message
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+      await axios.post(
+        "http://localhost:3000/api/users/register", // Corrected URL
         {
-          name, // Include name in the request
-          username,
+          name,
+          email,
           password,
         }
       );
-      console.log(response.data); // Handle success
+
+      // Display success message
+      setMessage("Registration successful!");
+
+      // Clear input fields after successful registration
+      setName("");
+      setEmail("");
+      setPassword("");
+
+      // Set a timer to clear the message after 3 seconds
+      setTimeout(() => {
+        setMessage("");
+      }, 3000); // 3 seconds
     } catch (err) {
       console.error("Registration failed", err);
+      setMessage("Registration failed");
     }
   };
 
   return (
     <div className="container">
+      {message && <div className="success-message">{message}</div>}{" "}
+      {/* Display success or error message */}
       <div className="register-container">
         <div className="register-form">
           <h2>Join Our Community</h2>
@@ -41,7 +57,7 @@ const Register = () => {
           <form onSubmit={handleRegister} className="form-elements">
             <input
               type="text"
-              placeholder="Name" // Input field for name
+              placeholder="Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -49,9 +65,9 @@ const Register = () => {
             />
             <input
               type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
               className="input-field"
             />

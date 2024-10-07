@@ -1,46 +1,102 @@
-/* src/pages/Home.css */
 .home-container {
   text-align: center;
-  background-color: #f8f9fa; /* Light background */
-  padding: 50px 20px 0px; /* Padding around the container */
+  background-color: #f8f9fa;
+  padding: 50px 20px 0px;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 .hero {
   position: relative;
   margin-bottom: 70px;
+  padding: 0 20px; /* Ensure padding on smaller screens */
 }
 
 .hero-image {
   width: 100%;
-  max-height: auto; /* Ensure the image does not exceed this height */
+  height: auto; /* Ensure image height adjusts properly */
   object-fit: cover; /* Cover the area while preserving aspect ratio */
   border-radius: 10px; /* Rounded corners */
   margin-top: -40px;
 }
 
 .slogan {
-  font-size: 2.5rem; /* Slogan font size */
-  margin: 20px 0; /* Margin around slogan */
-  color: #333; /* Dark text color */
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #333;
 }
 
 .description {
-  font-size: 1.2rem; /* Description font size */
-  color: #555; /* Slightly lighter text color */
-  margin-bottom: 30px; /* Space below description */
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
 }
 
 .register-button {
-  padding: 8px 10px; /* Padding around button */
-  background-color: #007bff; /* Button background color */
-  color: white; /* Button text color */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  text-decoration: none; /* Remove underline */
-  font-size: 1.1rem; /* Button text size */
-  transition: background-color 0.3s ease; /* Smooth transition */
+  padding: 8px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
 }
 
 .register-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3;
+}
+
+/* Responsive design for screens 768px and below */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 20px 10px;
+  }
+
+  .hero {
+    margin-bottom: 50px;
+  }
+
+  .hero-image {
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .slogan {
+    font-size: 2rem;
+    margin: 15px 0;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .register-button {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+}
+
+/* Extra small screens (below 480px) */
+@media (max-width: 480px) {
+  .hero-image {
+    height: 200px;
+  }
+
+  .slogan {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .register-button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
 }

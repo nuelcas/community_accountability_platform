@@ -4,9 +4,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: 30px;
   background-color: #f4f4f4;
-  height: 100vh;
+  height: auto;
 }
 
 .register-form {
@@ -78,4 +78,19 @@ h2 {
 
 .login-button:hover {
   background-color: #27ae60;
+}
+
+/* Register.css */
+
+.success-message {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4caf50; /* Green background */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000; /* Ensures it appears above other content */
+  transition: opacity 0.5s;
 }

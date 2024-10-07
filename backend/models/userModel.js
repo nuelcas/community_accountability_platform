@@ -1,32 +1,33 @@
-const db = require("../config");
-const bcrypt = require("bcryptjs");
+const db = require("../config/db"); // Assuming you have a database configuration
 
-// Register a new user
-const registerUser = (username, email, password, callback) => {
-  const hashedPassword = bcrypt.hashSync(password, 10);
-  const sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+// Function to find a user by email
+exports.findUserByEmail = async (email) => {
+  const query = "SELECT * FROM users WHERE email = ?";
 
-  db.query(sql, [username, email, hashedPassword], (err, results) => {
-    if (err) {
-      return callback({ success: false, message: "Error registering." });
+  try {
+    const [results] = await db.promise().execute(query, [email]);
+
+    if (results.length === 0) {
+      return null; // No user found
     }
-    callback(null, { success: true, message: "Registered successfully!" });
-  });
+
+    return results[0]; // Return the first matching user
+  } catch (err) {
+    throw new Error("Database query failed");
+  }
 };
 
-// Find user by email (for login)
-const findUserByEmail = (email, callback) => {
-  const sql = "SELECT * FROM users WHERE email = ?";
+// Function to register a new user
+exports.registerUser = async (name, email, hashedPassword) => {
+  const query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
 
-  db.query(sql, [email], (err, results) => {
-    if (err || results.length === 0) {
-      return callback({
-        success: false,
-        message: "Login failed. User not found.",
-      });
-    }
-    callback(null, results[0]);
-  });
+  try {
+    const [results] = await db
+      .promise()
+      .execute(query, [name, email, hashedPassword]);
+
+    return results; // Return the result of the insert operation
+  } catch (err) {
+    throw new Error("Database insert failed");
+  }
 };
-
-module.exports = { registerUser, findUserByEmail };

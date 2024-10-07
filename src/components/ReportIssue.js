@@ -33,6 +33,7 @@ const ReportIssue = () => {
     }
   };
 
+  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -47,18 +48,28 @@ const ReportIssue = () => {
     });
 
     try {
+      const token = localStorage.getItem("token"); // Fetch the authentication token from localStorage
+      if (!token) {
+        alert("You need to log in to report an issue.");
+        return;
+      }
+
       const response = await axios.post(
         "http://localhost:5000/api/reports",
         formData,
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`, // Include the token in the Authorization header
           },
         }
       );
+
       console.log(response.data);
+      alert("Issue reported successfully!");
     } catch (err) {
       console.error("Error reporting issue", err);
+      alert("Failed to report issue. Please try again.");
     }
   };
 

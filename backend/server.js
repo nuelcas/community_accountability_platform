@@ -1,11 +1,16 @@
 const express = require("express");
 const multer = require("multer");
+const cors = require("cors");
+const path = require("path");
 const userRoutes = require("./routes/userRoutes");
-const path = require("path"); // Import path module
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
 
 // Middleware
+app.use(cors()); // Allow cross-origin requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -13,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/users", userRoutes);
 
 // Serve static files from the React app's build folder
-app.use(express.static(path.join(__dirname, "../build"))); // Adjust the path if necessary
+app.use(express.static(path.join(__dirname, "../build"))); // Adjust path if necessary
 
 // Multer setup for file uploads
 const upload = multer({ dest: "uploads/" });

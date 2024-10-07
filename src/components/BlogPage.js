@@ -1,6 +1,6 @@
-// src/components/BlogPage.js
 import React, { useState } from "react";
-import "./BlogPage.css"; // You can create a CSS file for styling
+import "./BlogPage.css";
+import Contact from "./Contact";
 
 const BlogPage = () => {
   const [expandedPost, setExpandedPost] = useState(null);
@@ -27,18 +27,21 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="blog-container">
-      <h2>Our Blog</h2>
-      {blogPosts.map((post, index) => (
-        <div key={index} className="blog-post">
-          <h3>{post.title}</h3>
-          <p>{post.summary}</p>
-          <button onClick={() => togglePost(index)}>
-            {expandedPost === index ? "Read Less" : "Read More"}
-          </button>
-          {expandedPost === index && <p>{post.content}</p>}
-        </div>
-      ))}
+    <div>
+      <div className="blog-container">
+        <h2>Our Blog</h2>
+        {blogPosts.map((post, index) => (
+          <div key={index} className="blog-post">
+            <h3>{post.title}</h3>
+            <p>{post.summary}</p>
+            <button onClick={() => togglePost(index)}>
+              {expandedPost === index ? "Read Less" : "Read More"}
+            </button>
+            {expandedPost === index && <p>{post.content}</p>}
+          </div>
+        ))}
+      </div>
+      <Contact />
     </div>
   );
 };
