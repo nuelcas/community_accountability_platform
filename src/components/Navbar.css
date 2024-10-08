@@ -89,7 +89,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 870px) {
+@media (max-width: 980px) {
   .nav-list {
     display: none;
     flex-direction: column;
