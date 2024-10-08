@@ -1,22 +1,34 @@
-/* src/components/Login.css */
+html,
+body {
+  height: 100%; /* Ensures the body takes up the full height */
+  margin: 0;
+  padding: 0;
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-grow: 1;
   width: 100%;
   max-width: 500px;
-  margin: 20px auto; /* 20px top and bottom, auto left and right */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9; /* Light background */
-  min-height: 500px; /* Use min-height instead of height */
+  background-color: #f9f9f9;
+  margin: auto;
 }
 
 h2 {
-  margin-bottom: 20px; /* Decrease margin-bottom */
-  color: #333; /* Dark text */
+  margin-bottom: 20px;
+  color: #333;
   font-family: "Arial", sans-serif;
 }
 
@@ -24,27 +36,27 @@ input {
   width: 95%;
   padding: 12px;
   margin: 12px 0;
-  border: 1px solid #ddd; /* Light border */
+  border: 1px solid #ddd;
   border-radius: 4px;
 }
 
 input:focus {
-  border-color: #007bff; /* Highlight border on focus */
-  outline: none; /* Remove outline */
+  border-color: #007bff;
+  outline: none;
 }
 
 .login-button {
   padding: 10px;
-  color: #fff; /* White text */
-  background-color: #007bff; /* Primary color */
+  color: #fff;
+  background-color: #007bff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease;
 }
 
 .login-button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #0056b3;
 }
 
 .register-prompt {
@@ -53,12 +65,12 @@ input:focus {
 }
 
 .register-link {
-  color: #007bff; /* Link color */
-  text-decoration: none; /* Remove underline */
+  color: #007bff;
+  text-decoration: none;
 }
 
 .register-link:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
 }
 
 .login-message {

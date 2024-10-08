@@ -1,26 +1,29 @@
 .home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space items to avoid overflow */
+  min-height: 100vh; /* Occupy full viewport height */
   text-align: center;
   background-color: #f8f9fa;
-  padding: 50px 20px 0px;
-  overflow-x: hidden;
-  width: 100%;
-  height: 100%;
-  max-width: 100vw;
-  max-height: 100vh;
+  padding: 0 20px;
 }
 
 .hero {
   position: relative;
-  margin-bottom: 70px;
-  padding: 0 20px; /* Ensure padding on smaller screens */
+  flex: 1; /* Allow hero to grow but not take too much space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 50px;
 }
 
 .hero-image {
   width: 100%;
-  height: auto; /* Ensure image height adjusts properly */
-  object-fit: cover; /* Cover the area while preserving aspect ratio */
-  border-radius: 10px; /* Rounded corners */
-  margin-top: -40px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .slogan {
@@ -50,38 +53,25 @@
   background-color: #0056b3;
 }
 
-/* Responsive design for screens 768px and below */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .home-container {
-    padding: 20px 10px;
-  }
-
-  .hero {
-    margin-bottom: 50px;
-  }
-
   .hero-image {
     height: 250px;
-    object-fit: cover;
   }
 
   .slogan {
     font-size: 2rem;
-    margin: 15px 0;
   }
 
   .description {
     font-size: 1rem;
-    margin-bottom: 20px;
   }
 
   .register-button {
     font-size: 1rem;
-    padding: 8px 15px;
   }
 }
 
-/* Extra small screens (below 480px) */
 @media (max-width: 480px) {
   .hero-image {
     height: 200px;

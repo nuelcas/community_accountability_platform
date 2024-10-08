@@ -1,16 +1,30 @@
-/* ReportIssue.css */
+html,
+body {
+  height: 100%; /* Ensures the body takes up the full height */
+  margin: 0;
+  padding: 0;
+}
+
+.report-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 .form-wrapper {
-  background-color: #f7fafc; /* Soft background for a clean look */
+  background-color: #f7fafc;
   padding: 2rem;
   margin: 2rem auto;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 600px;
+  flex-grow: 1; /* Allow the form-wrapper to grow and take available space */
+  display: flex;
+  flex-direction: column;
 }
 
 .form-title {
-  color: #003366; /* Dark blue for a professional feel */
+  color: #003366;
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 1rem;
@@ -19,7 +33,7 @@
 .form-mission {
   text-align: center;
   font-size: 1rem;
-  color: #555; /* Light grey for the mission text */
+  color: #555;
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -42,13 +56,13 @@
 
 .input-field:focus,
 .textarea-field:focus {
-  border-color: #0052cc; /* Blue border when focused */
+  border-color: #0052cc;
   outline: none;
 }
 
 .textarea-field {
   height: 150px;
-  resize: none; /* Disable resizing */
+  resize: none;
 }
 
 .file-upload {
@@ -86,5 +100,5 @@
 }
 
 .submit-button:hover {
-  background-color: #003366; /* Darker blue on hover */
+  background-color: #003366;
 }

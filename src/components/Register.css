@@ -1,12 +1,25 @@
-/* src/components/Register.css */
+html,
+body {
+  height: 100%; /* Ensures the body takes up the full height */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .register-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
   padding: 30px;
   background-color: #f4f4f4;
-  height: auto;
+  max-height: 100vh;
 }
 
 .register-form {
@@ -80,17 +93,15 @@ h2 {
   background-color: #27ae60;
 }
 
-/* Register.css */
-
 .success-message {
   position: fixed;
   top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #4caf50; /* Green background */
+  background-color: #4caf50;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
-  z-index: 1000; /* Ensures it appears above other content */
+  z-index: 1000;
   transition: opacity 0.5s;
 }

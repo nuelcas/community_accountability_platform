@@ -1,7 +1,6 @@
-// src/components/Contact.js
 import React from "react";
-import { FaFacebook, FaTwitter } from "react-icons/fa"; // Importing social media icons
-import "./Contact.css"; // Import the CSS file for styling
+import { FaFacebook, FaTwitter } from "react-icons/fa";
+import "./Contact.css";
 
 const Contact = () => {
   return (

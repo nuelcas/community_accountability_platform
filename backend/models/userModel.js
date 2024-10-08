@@ -1,4 +1,4 @@
-const db = require("../config/db"); // Assuming you have a database configuration
+const db = require("../config/db");
 
 // Function to find a user by email
 exports.findUserByEmail = async (email) => {

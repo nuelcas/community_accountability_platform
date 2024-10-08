@@ -1,5 +1,4 @@
-// src/components/RealTimeTracking.js
-import React, { useEffect } from "react"; // Removed useState
+import React, { useEffect } from "react";
 import "./RealTimeTracking.css";
 import Contact from "./Contact";
 
@@ -18,7 +17,7 @@ const RealTimeTracking = () => {
     // Initialize the map
     const initializeMap = () => {
       const mapOptions = {
-        center: { lat: -1.2921, lng: 36.8219 }, // Nairobi as default center
+        center: { lat: -1.2921, lng: 36.8219 },
         zoom: 12,
       };
       // Initialize the map without storing it in state

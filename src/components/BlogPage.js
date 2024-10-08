@@ -27,7 +27,7 @@ const BlogPage = () => {
   };
 
   return (
-    <div>
+    <div className="main-container">
       <div className="blog-container">
         <h2>Our Blog</h2>
         {blogPosts.map((post, index) => (

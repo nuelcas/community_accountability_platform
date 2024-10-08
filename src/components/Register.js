@@ -1,6 +1,5 @@
-// src/components/Register.js
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // To navigate to the login page
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Register.css";
 import Contact from "./Contact";
@@ -14,14 +13,11 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(
-        "http://localhost:3000/api/users/register", // Corrected URL
-        {
-          name,
-          email,
-          password,
-        }
-      );
+      await axios.post("http://localhost:3000/api/users/register", {
+        name,
+        email,
+        password,
+      });
 
       // Display success message
       setMessage("Registration successful!");

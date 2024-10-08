@@ -1,49 +1,62 @@
-/* src/components/RealTimeTracking.css */
+html,
+body {
+  height: 100%; /* Ensures the body takes up the full height */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .map-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 40px;
-  background-color: #f9f9f9; /* Light background for contrast */
+  background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto; /* Center the container with margin */
+  margin: 20px auto;
   max-width: 800px;
+  flex-grow: 1;
 }
 
 .heading {
   font-size: 2rem;
-  color: #2c3e50; /* Darker color for the heading */
+  color: #2c3e50;
   margin-bottom: 10px;
-  text-align: center; /* Center the heading */
+  text-align: center;
 }
 
 .mission-description {
   font-size: 1.2rem;
-  color: #34495e; /* Slightly lighter for the description */
-  margin-bottom: 30px; /* Space below the description */
-  text-align: center; /* Center the description */
+  color: #34495e;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .map {
-  width: 100%; /* Full width for the map */
-  height: 400px; /* Set a height for the map */
-  border: 1px solid #ccc; /* Light border around the map */
-  border-radius: 8px; /* Rounded corners for the map */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  width: 100%;
+  height: 400px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 600px) {
   .heading {
-    font-size: 1.5rem; /* Smaller font on mobile */
+    font-size: 1.5rem;
   }
 
   .mission-description {
-    font-size: 1rem; /* Smaller font on mobile */
+    font-size: 1rem;
   }
 
   .map {
-    height: 300px; /* Reduced height on mobile */
+    height: 300px;
   }
 }

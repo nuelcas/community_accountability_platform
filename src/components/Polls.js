@@ -1,4 +1,3 @@
-// src/components/Poll.js
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Polls.css";

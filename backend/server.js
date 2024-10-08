@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/users", userRoutes);
 
 // Serve static files from the React app's build folder
-app.use(express.static(path.join(__dirname, "../build"))); // Adjust path if necessary
+app.use(express.static(path.join(__dirname, "../build")));
 
 // Multer setup for file uploads
 const upload = multer({ dest: "uploads/" });
@@ -31,7 +31,7 @@ app.post("/api/issues/upload", upload.array("files", 5), (req, res) => {
 
 // Catch-all route to serve React's index.html for any route not handled by API routes
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build", "index.html")); // Adjust path if necessary
+  res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
 // Start the server
