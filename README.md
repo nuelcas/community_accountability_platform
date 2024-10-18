@@ -23,5 +23,9 @@ The **CAP** platform is being built using the following technologies:
   - React.js
 - **Backend**:
   - Node.js
+- **Database"":
+    - MySQL
+ 
+It will be a great pleasure to have you on board. Want to participate? Feel free to reach out **casmir_ao@ymail.com**
 - **Database**:
   - MySQL
